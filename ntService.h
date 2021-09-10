@@ -1,0 +1,63 @@
+// ntService.h: Declares everything needed to use the ntService.cpp module
+//
+// Thread-Safe: NO
+//
+
+
+//////////////////////////
+// Include Protection	//
+//////////////////////////
+#ifndef __NTSERVICE_H
+#define __NTSERVICE_H
+
+
+
+	//////////////////////////
+	// Exported Consts		//
+	//////////////////////////
+	extern const DWORD NTSERVICE_DEFAULT_TIMEOUT;
+
+
+	//////////////////////////////////
+	// Functions: Service App		//
+	//////////////////////////////////
+	bool ServiceApp_Init ();
+	void WINAPI ntsvc_ServiceMain (DWORD, LPTSTR*);
+	void ServiceApp_Terminate ();
+
+
+	//////////////////////////////////////
+	// Functions: ServiceApp Threads	//
+	//////////////////////////////////////
+	long ServiceApp_Winsuite_Thread_Server (long);
+	long ServiceApp_NetMsg_Thread_Server (long);
+	long ServiceApp_Syslog_Thread_Server (long);
+
+
+	//////////////////////////////////////////////////
+	// Functions: NT-Service Install / Uninstall	//
+	//////////////////////////////////////////////////
+	bool ntsvc_Install (string, string);
+	bool ntsvc_Uninstall (string);
+
+
+	//////////////////////////////////////////////
+	// Functions: NT-Service Public Interface	//
+	//////////////////////////////////////////////
+	bool ntsvc_InitFromWinMain (string);
+
+
+	//////////////////////////////////////////
+	// Functions: Service Control Handler	//
+	//////////////////////////////////////////
+	DWORD WINAPI ntsvc_ServiceControlEx (DWORD, DWORD, LPVOID, LPVOID);
+
+
+	//////////////////////////////////////////////////////////////////
+	// Functions: Thread Interface for telling shutdown progress	//
+	//////////////////////////////////////////////////////////////////
+	void WINAPI ntsvc_SendProgressToSCM (DWORD, bool);
+
+
+
+#endif
