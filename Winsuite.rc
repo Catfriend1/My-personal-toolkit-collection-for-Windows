@@ -1,0 +1,423 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "Comments", "WinSuite"
+            VALUE "FileDescription", "WinSuite"
+            VALUE "FileVersion", "4.0.0.0"
+            VALUE "InternalName", "Winsuite"
+            VALUE "OriginalFilename", "Winsuite.exe"
+            VALUE "ProductName", "WinSuite"
+            VALUE "ProductVersion", "4.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_WINSUITE            ICON                    "icons\\icon1.ico"
+
+IDI_CLOSE               ICON                    "Icons\\Close.ico"
+
+IDI_EXPLORER            ICON                    "Icons\\Explorer.ico"
+
+IDI_MAX                 ICON                    "Icons\\Max.ico"
+
+IDI_EXECUTE             ICON                    "Icons\\ShellExecute.ico"
+
+IDI_SOFTWAREBIG         ICON                    "Icons\\SoftwareBig.ico"
+
+IDI_UNKNOWN             ICON                    "Icons\\Unknown.ico"
+
+IDI_REGTOOL             ICON                    "Icons\\Regtool.ico"
+
+IDI_ADDFILE             ICON                    "Icons\\Addfile.ico"
+
+IDI_DISK                ICON                    "Icons\\Disk.ico"
+
+IDI_AMOVIE16            ICON                    "Icons\\Amovie16.ico"
+
+IDI_AMOVIE32            ICON                    "Icons\\Amovie32.ico"
+
+IDI_NEXTFILE            ICON                    "Icons\\Nextfile.ico"
+
+IDI_PLAY                ICON                    "Icons\\Play.ico"
+
+IDI_PLAYPAUSE           ICON                    "Icons\\PlayPause1.ico"
+
+IDI_PLAYPAUSE2          ICON                    "Icons\\PlayPause2.ico"
+
+IDI_REMOVE              ICON                    "Icons\\Remove.ico"
+
+IDI_RESTORE             ICON                    "Icons\\Restore.ico"
+
+IDI_STOP                ICON                    "Icons\\Stop.ico"
+
+IDI_POWER               ICON                    "Icons\\Task.ico"
+
+IDI_RESTART32           ICON                    "Icons\\Restart32.ico"
+
+IDI_APPS                ICON                    "Icons\\Apps.ico"
+
+IDI_NTPROTECT           ICON                    "Icons\\ntprotect.ico"
+
+IDI_PROCVIEW            ICON                    "Icons\\xp_8bit.ico"
+
+IDI_CHECK               ICON                    "Icons\\Check.ico"
+
+IDI_BLUEEYE             ICON                    "Icons\\Eye.ico"
+
+IDI_SLSTART             ICON                    "Icons\\Logfile.ico"
+
+IDI_LOGFILE             ICON                    "Icons\\News.ico"
+
+IDI_SLSTOP              ICON                    "Icons\\Slstop.ico"
+
+IDI_PAPER               ICON                    "Icons\\Paper.ico"
+
+IDI_SHUTDOWN            ICON                    "Icons\\Shutdown.ico"
+
+IDI_MONITOR             ICON                    "Icons\\Monitor.ico"
+
+IDI_PCSTART             ICON                    "Icons\\PCStart.ico"
+
+IDI_PCSTOP              ICON                    "Icons\\PCStop.ico"
+
+IDI_NETMSG_CONNECTING   ICON                    "Icons\\netmsg_connecting.ico"
+
+IDI_NETMSG_DISCONNECTED ICON                    "Icons\\netmsg_disconnected.ico"
+
+IDI_NETMSG_NEWMSG       ICON                    "Icons\\netmsg_newmsg.ico"
+
+IDI_NETMSG_NOMSG        ICON                    "Icons\\netmsg_nomsg.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_SYSTRAYPLAYER ACCELERATORS
+BEGIN
+    "a",            IDM_ADD,                ASCII,  ALT, NOINVERT
+    "n",            IDM_NEXTFILE,           ASCII,  ALT, NOINVERT
+    "p",            IDM_PLAY,               ASCII,  ALT, NOINVERT
+    "r",            IDM_REMOVE,             ASCII,  ALT, NOINVERT
+    "s",            IDM_STOP,               ASCII,  ALT, NOINVERT
+    "x",            IDM_EXIT,               ASCII,  ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_NETMSG_MAIN DIALOGEX 0, 0, 406, 277
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Netzwerk-Nachrichtendienst"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Aktive Clients und Benutzer",IDC_STATIC,7,7,166,263
+    LISTBOX         IDC_LB,15,22,149,239,LBS_SORT | LBS_MULTIPLESEL | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Aktionen",IDC_STATIC,173,7,226,263
+    LTEXT           "Bitte wählen Sie zuerst die betreffenden Clients und Benutzer aus der linksstehenden Liste aus. Anschließend bestimmen Sie die durchzuführende Aktion.",IDC_STATIC,179,22,212,30
+    LTEXT           "- Ausgewählte Clients:",IDC_STATIC,181,58,208,9
+    PUSHBUTTON      "Neu starten",IDC_RESTART,186,71,88,16
+    PUSHBUTTON      "Abmelden",IDC_LOGOFF,287,71,88,16
+    PUSHBUTTON      "Herunterfahren",IDC_SHUTDOWN,186,92,88,16
+    PUSHBUTTON      "GPO übernehmen",IDC_GPUPDATE,287,92,88,16
+    LTEXT           "- Ausgewählten Clients eine Nachricht senden:",IDC_STATIC,184,126,208,9
+    EDITTEXT        IDC_MESSAGE,188,142,204,87,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "Senden",IDC_SENDMSG,188,233,88,16
+END
+
+IDD_NETMSG_CHECKPW DIALOGEX 0, 0, 281, 78
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Enter Password"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_FRAME_LOGIN,2,0,276,76
+    LTEXT           "Please enter the administrative password to access Network Messenger's main menu.",IDL_LOGINPROMPT,11,10,258,16
+    EDITTEXT        IDC_PW,10,34,260,12,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&OK",IDOK,75,55,61,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,145,55,61,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_NETMSG_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 399
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 270
+    END
+
+    IDD_NETMSG_CHECKPW, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 76
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Englisch (USA) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SHXDIALOG DIALOGEX 0, 0, 240, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Start Application"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CTEXT           "Call:",IDL_CALL,7,55,30,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    COMBOBOX        IDC_CBOX,37,55,189,12,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "&OK",IDC_OK,37,71,52,14
+    PUSHBUTTON      "&Cancel",IDC_CANCEL,97,71,57,14
+    PUSHBUTTON      "&Browse...",IDC_BROWSE,162,71,64,14
+    LTEXT           "<LABEL>",IDL_TEXT,40,7,195,46
+END
+
+IDD_ARWARN DIALOG 0, 0, 274, 208
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION
+CAPTION "Autostart Manager"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDS_EVENTMSG,3,25,258,72
+    PUSHBUTTON      "&Accept Change",IDB_ACCEPT,26,107,59,15
+    PUSHBUTTON      "&Restore Entry",IDB_RESTORE,107,107,53,15
+    DEFPUSHBUTTON   "&Details >>",IDB_DETAILS,188,107,47,15
+    GROUPBOX        "Details",IDF_DETAILS,3,130,268,74
+    GROUPBOX        "",IDC_STATIC,184,99,55,27
+    LTEXT           "",IDS_DETAILS,8,142,257,57
+    CONTROL         "Warning:\n¯¯¯¯¯¯¯",IDC_WARNING,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,3,7,40,10
+END
+
+IDD_SETUP DIALOGEX 60, 60, 462, 380
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "WinSuite - Setup"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Please choose from all available WinSuite components the ones you wish to run during your Windows session:",IDC_WELCOME1,7,8,443,17
+    GROUPBOX        "",IDC_STATIC,5,23,220,97
+    CONTROL         "Autostart Manager",IDC_AUTORUNS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,30,74,10
+    LTEXT           "",IDL_AUTORUNS,10,40,210,60
+    GROUPBOX        "",IDC_STATIC,5,119,220,126
+    CONTROL         "NT Protect",IDC_NTPROTECT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,127,51,10
+    LTEXT           "",IDL_NTPROTECT,10,138,205,77
+    CONTROL         "Show Logo",IDC_NTP_SHOWLOGO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,215,52,10
+    CONTROL         "Show Desktop",IDC_NTP_SHOWDESK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,86,215,63,10
+    CONTROL         "Write Log",IDC_NTP_WRITELOG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,173,215,47,10
+    LTEXT           "Alarm Sound:",IDC_STATIC,11,229,44,10
+    EDITTEXT        IDC_NTP_ALARMSOUND,57,227,158,12,ES_AUTOHSCROLL
+    CONTROL         "Systray Player",IDC_SYSTRAYPLAYER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,234,127,60,10
+    LTEXT           "",IDL_SYSTRAYPLAYER,234,138,216,77
+    CONTROL         "Use Ramdisk",IDC_SPL_USERD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,234,215,58,10
+    LTEXT           "Drive letter:",IDC_DRIVE_INFO,246,229,39,10
+    EDITTEXT        IDC_SPL_RDDRIVE,285,227,165,12,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,6,244,220,100
+    CONTROL         "Process Viewer",IDC_PROCVIEW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,253,65,10
+    LTEXT           "",IDL_PROCVIEW,10,263,205,77
+    GROUPBOX        "",IDC_STATIC,230,244,225,100
+    GROUPBOX        "",IDC_STATIC,6,344,449,31
+    DEFPUSHBUTTON   "&Save Settings and exit Setup",IDOK,15,354,110,14
+    PUSHBUTTON      "&Cancel and exit Setup",IDCANCEL,340,354,110,14
+    GROUPBOX        "",IDC_STATIC,230,23,225,97
+    GROUPBOX        "",IDC_STATIC,230,119,225,126
+END
+
+IDD_CHANGEPW DIALOG 0, 0, 254, 58
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Change Password"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,196,20,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,196,36,50,14
+    LTEXT           "Please enter and verify your new desired password now:",IDL_CHANGEPWPROMPT,8,7,186,8
+    EDITTEXT        IDC_NEWPW,8,22,178,12,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_VERNEWPW,8,37,178,12,ES_PASSWORD | ES_AUTOHSCROLL
+END
+
+IDD_PASS DIALOG 0, 0, 279, 68
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "··· Enter Password ···"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,66,44,50,14,WS_DISABLED
+    PUSHBUTTON      "&Cancel",IDCANCEL,166,44,50,14
+    LTEXT           "This workstation has been locked. Please authenticate by entering your password:",IDL_LOGINPROMPT,9,10,267,9
+    GROUPBOX        "",IDL_LOGINPROMPT,2,0,276,65
+    EDITTEXT        IDC_PW,10,25,260,12,ES_PASSWORD | ES_AUTOHSCROLL
+    PUSHBUTTON      "Change",IDB_CHANGE,116,44,50,14,WS_DISABLED
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_SHXDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_ARWARN, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_SETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 457
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 374
+    END
+
+    IDD_CHANGEPW, DIALOG
+    BEGIN
+        TOPMARGIN, 1
+    END
+
+    IDD_PASS, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_PROCVIEW MENU
+BEGIN
+    MENUITEM "&Hide",                       ID_HIDEWINDOW
+    MENUITEM "|",                           40008
+    MENUITEM "Send &Close Signal",          ID_SENDCLOSE
+    MENUITEM "&Terminate Process",          ID_TERMINATE
+    MENUITEM "|",                           40009
+    MENUITEM "&Run program",                ID_SHX
+END
+
+#endif    // Englisch (USA) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
