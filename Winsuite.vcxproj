@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{673D1F29-860D-1E0F-2C18-61E0E287F915}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <CustomBuildAfterTargets />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LANG_DE;_WINDOWS;_WIN32_WINNT=0x0600;_WIN32_IE=0x500;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\Winsuite.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\Winsuite.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0407</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Winsuite.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Release\Winsuite.exe</OutputFile>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;comctl32.lib;wininet.lib;rasapi32.lib;strmiids.lib;mpr.lib;ws2_32.lib;iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>release_copy.log</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LANG_DE;_WINDOWS;_WIN32_WINNT=0x0600;_WIN32_IE=0x500;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\Winsuite.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\Winsuite.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0407</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Winsuite.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\x64\Release\Winsuite.exe</OutputFile>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;comctl32.lib;wininet.lib;rasapi32.lib;strmiids.lib;mpr.lib;ws2_32.lib;iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>release_copy.log</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LANG_DE;_WINDOWS;_WIN32_WINNT=0x0600;_WIN32_IE=0x500;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\Winsuite.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\Winsuite.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0407</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Winsuite.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Debug\Winsuite.exe</OutputFile>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;mpr.lib;wininet.lib;rasapi32.lib;comctl32.lib;strmiids.lib;ws2_32.lib;userenv.lib;iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LANG_DE;_WINDOWS;_WIN32_WINNT=0x0600;_WIN32_IE=0x500;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\Winsuite.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\Winsuite.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0407</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Winsuite.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\x64\Debug\Winsuite.exe</OutputFile>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;mpr.lib;wininet.lib;rasapi32.lib;comctl32.lib;strmiids.lib;ws2_32.lib;userenv.lib;iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Boot.cpp" />
+    <ClCompile Include="Modules\CSendKeys.cpp" />
+    <ClCompile Include="NetMsg\NetMsg_Client.cpp" />
+    <ClCompile Include="NetMsg\NetMsg_Server.cpp" />
+    <ClCompile Include="NetMsg\NetMsg_vcomm.cpp" />
+    <ClCompile Include="ntService.cpp" />
+    <ClCompile Include="RawPrintServer\RawPrintServer.cpp" />
+    <ClCompile Include="Winsuite_Server.cpp" />
+    <ClCompile Include="Syslog\Syslog_Shared.cpp" />
+    <ClCompile Include="Syslog\Syslog_Client.cpp" />
+    <ClCompile Include="Syslog\Syslog_Server.cpp" />
+    <ClCompile Include="Syslog\Syslog_vcomm.cpp" />
+    <ClCompile Include="vcomm.cpp" />
+    <ClCompile Include="Autoruns\Autoruns.cpp" />
+    <ClCompile Include="ProcView\ProcView.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="Modules\Ext\ShellExDlg.cpp" />
+    <ClCompile Include="Modules\ActiveMovie.cpp" />
+    <ClCompile Include="Modules\CFSLogger.cpp" />
+    <ClCompile Include="Modules\Comctls.cpp" />
+    <ClCompile Include="Modules\ControlUI.cpp" />
+    <ClCompile Include="Modules\FileSystem.cpp" />
+    <ClCompile Include="Modules\GDI.cpp" />
+    <ClCompile Include="Modules\Inifile.cpp" />
+    <ClCompile Include="Modules\MegaPopup.cpp" />
+    <ClCompile Include="Modules\Process.cpp" />
+    <ClCompile Include="Modules\Registry.cpp" />
+    <ClCompile Include="Modules\ShellNotify.cpp" />
+    <ClCompile Include="Modules\StructArray.cpp" />
+    <ClCompile Include="Modules\TheString.cpp" />
+    <ClCompile Include="Modules\VbStd.cpp" />
+    <ClCompile Include="Modules\Wsock2.cpp" />
+    <ClCompile Include="SystrayPlayer\SystrayPlayer.cpp" />
+    <ClCompile Include="NTProtect\NTProtect.cpp" />
+    <ClCompile Include="WindowPoser\WindowPoser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Boot.h" />
+    <ClInclude Include="Modules\CSendKeys.h" />
+    <ClInclude Include="NetMsg\NetMsg_Client.h" />
+    <ClInclude Include="NetMsg\NetMsg_Server.h" />
+    <ClInclude Include="NetMsg\NetMsg_vcomm.h" />
+    <ClInclude Include="NTProtect\endpointvolume_custom.h" />
+    <ClInclude Include="ntService.h" />
+    <ClInclude Include="RawPrintServer\RawPrintServer.h" />
+    <ClInclude Include="Winsuite_Server.h" />
+    <ClInclude Include="Syslog\Syslog_Shared.h" />
+    <ClInclude Include="Syslog\Syslog_Client.h" />
+    <ClInclude Include="Syslog\Syslog_Server.h" />
+    <ClInclude Include="Syslog\Syslog_vcomm.h" />
+    <ClInclude Include="vcomm.h" />
+    <ClInclude Include="Autoruns\Autoruns.h" />
+    <ClInclude Include="ProcView\ProcView.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="Modules\Ext\ShellExDlg.h" />
+    <ClInclude Include="Modules\_modules.h" />
+    <ClInclude Include="Modules\ActiveMovie.h" />
+    <ClInclude Include="Modules\CFSLogger.h" />
+    <ClInclude Include="Modules\Comctls.h" />
+    <ClInclude Include="Modules\ControlUI.h" />
+    <ClInclude Include="Modules\FileSystem.h" />
+    <ClInclude Include="Modules\GDI.h" />
+    <ClInclude Include="Modules\Inifile.h" />
+    <ClInclude Include="Modules\MegaPopup.h" />
+    <ClInclude Include="Modules\Process.h" />
+    <ClInclude Include="Modules\Registry.h" />
+    <ClInclude Include="Modules\ShellNotify.h" />
+    <ClInclude Include="Modules\StructArray.h" />
+    <ClInclude Include="Modules\TheString.h" />
+    <ClInclude Include="Modules\VbStd.h" />
+    <ClInclude Include="Modules\Wsock2.h" />
+    <ClInclude Include="SystrayPlayer\SystrayPlayer.h" />
+    <ClInclude Include="NTProtect\NTProtect.h" />
+    <ClInclude Include="WindowPoser\WindowPoser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Icons\Addfile.ico" />
+    <CustomBuild Include="Icons\Amovie16.ico" />
+    <CustomBuild Include="Icons\Amovie32.ico" />
+    <CustomBuild Include="Icons\Apps.ico" />
+    <CustomBuild Include="Icons\Close.ico" />
+    <CustomBuild Include="Icons\Connected.ico" />
+    <CustomBuild Include="Icons\Connecting.ico" />
+    <CustomBuild Include="Icons\Defrag.ico" />
+    <CustomBuild Include="Icons\Disk.ico" />
+    <CustomBuild Include="Icons\Explorer.ico" />
+    <CustomBuild Include="Icons\firewall.ico" />
+    <CustomBuild Include="Icons\icon1.ico" />
+    <CustomBuild Include="Icons\inetopts.ico" />
+    <CustomBuild Include="Icons\Max.ico" />
+    <CustomBuild Include="Icons\net_active.ico" />
+    <CustomBuild Include="Icons\net_inactive.ico" />
+    <CustomBuild Include="Icons\net_recv.ico" />
+    <CustomBuild Include="Icons\net_send.ico" />
+    <CustomBuild Include="Icons\netconns.ico" />
+    <CustomBuild Include="Icons\Nextfile.ico" />
+    <CustomBuild Include="Icons\NoInternet.ico" />
+    <CustomBuild Include="Icons\ntprotect.ico" />
+    <CustomBuild Include="Icons\Play.ico" />
+    <CustomBuild Include="Icons\PlayPause1.ico" />
+    <CustomBuild Include="Icons\PlayPause2.ico" />
+    <CustomBuild Include="Icons\ProcView.ico" />
+    <CustomBuild Include="Icons\Quickres.ico" />
+    <CustomBuild Include="Icons\Regtool.ico" />
+    <CustomBuild Include="Icons\Remove.ico" />
+    <CustomBuild Include="Icons\Restart32.ico" />
+    <CustomBuild Include="Icons\Restore.ico" />
+    <CustomBuild Include="Icons\ShellExecute.ico" />
+    <CustomBuild Include="Icons\SoftwareBig.ico" />
+    <CustomBuild Include="Icons\Stop.ico" />
+    <CustomBuild Include="Icons\Task.ico" />
+    <CustomBuild Include="Icons\Unknown.ico" />
+    <CustomBuild Include="Icons\WinSuite.ico" />
+    <CustomBuild Include="Icons\xp_8bit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Winsuite.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Users\Anwender\Linked-Eigene Dateien\WinSuite\Icons\netmsg_connecting.ico" />
+    <None Include="Icons\Check.ico" />
+    <None Include="Icons\Eye.ico" />
+    <None Include="Icons\Logfile.ico" />
+    <None Include="Icons\Monitor.ico" />
+    <None Include="Icons\netmsg_connecting.ico" />
+    <None Include="Icons\netmsg_disconnected.ico" />
+    <None Include="Icons\netmsg_newmsg.ico" />
+    <None Include="Icons\netmsg_nomsg.ico" />
+    <None Include="Icons\net_grey.ico" />
+    <None Include="Icons\News.ico" />
+    <None Include="Icons\Paper.ico" />
+    <None Include="Icons\PCStart.ico" />
+    <None Include="Icons\PCStop.ico" />
+    <None Include="Icons\Shutdown.ico" />
+    <None Include="Icons\Slstop.ico" />
+    <None Include="Icons\VirtualBox.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

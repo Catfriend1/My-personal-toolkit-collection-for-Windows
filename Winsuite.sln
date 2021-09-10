@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Winsuite", "Winsuite.vcxproj", "{673D1F29-860D-1E0F-2C18-61E0E287F915}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{54FC16BE-C5EB-4AC0-B88E-0A96A38398F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{673D1F29-860D-1E0F-2C18-61E0E287F915}.Debug|Win32.ActiveCfg = Debug|Win32
+		{673D1F29-860D-1E0F-2C18-61E0E287F915}.Debug|Win32.Build.0 = Debug|Win32
+		{673D1F29-860D-1E0F-2C18-61E0E287F915}.Debug|x64.ActiveCfg = Debug|x64
+		{673D1F29-860D-1E0F-2C18-61E0E287F915}.Debug|x64.Build.0 = Debug|x64
+		{673D1F29-860D-1E0F-2C18-61E0E287F915}.Release|Win32.ActiveCfg = Release|Win32
+		{673D1F29-860D-1E0F-2C18-61E0E287F915}.Release|Win32.Build.0 = Release|Win32
+		{673D1F29-860D-1E0F-2C18-61E0E287F915}.Release|x64.ActiveCfg = Release|x64
+		{673D1F29-860D-1E0F-2C18-61E0E287F915}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC005852-939E-4DE1-AB0F-F8437EBB8969}
+	EndGlobalSection
+EndGlobal
