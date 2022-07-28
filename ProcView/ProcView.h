@@ -95,16 +95,6 @@
 		bool ctrlinited;
 
 		// Cache: Third-party installation info
-		string REGV_SOPHOS_SAVSERVICE_PATH;
-		string REGV_SOPHOS_WEBINTELLIGENCE_PATH;
-		string REGV_SOPHOS_WEBCONTROL_PATH;
-
-		string REGV_SOPHOS_MCS_ADAPTER;			// DLL-file
-		string SOPHOS_MCS_PATH;					// => Folder.
-
-		string REGV_SOPHOS_ALC_ADAPTER;			// DLL-file
-		string SOPHOS_ALC_PATH;					// => Folder.
-
 		string REGV_REALTEK_AUDIO_PATH;
 
 		// Cache: Resource Management

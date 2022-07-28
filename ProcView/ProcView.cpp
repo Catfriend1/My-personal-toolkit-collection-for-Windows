@@ -49,11 +49,11 @@ const long ProcView::SYSICON_TIMER_INTERVAL		= 5000;					// [5000]
 
 const long ProcView::StdMenuItems				= 5;
 const long ProcView::StartKernel				= StdMenuItems + 1;			// [StdMenuItems + 1]
-const long ProcView::StartSystem				= StartKernel + 21;			// [StartKernel + 21]
-const long ProcView::StartOther					= StartSystem + 41;			// [StartSystem + 41]
+const long ProcView::StartSystem				= StartKernel + 41;			// [StartKernel + 41]
+const long ProcView::StartOther					= StartSystem + 81;			// [StartSystem + 81]
 
-const char ProcView::plist_kernel_w10[]			= "*[System Process]*System*SVCHOST.EXE*MEMORY COMPRESSION*";
-const char ProcView::plist_system_w10[]			= "*SMSS.EXE*CSRSS.EXE*WINLOGON.EXE*SERVICES.EXE*LSASS.EXE*EXPLORER.EXE*SPOOLSV.EXE*ALG.EXE*CTFMON.EXE*AUDIODG.EXE*DWM.EXE*TASKHOST.EXE*LSM.EXE*WININIT.EXE*SEARCHFILTERHOST.EXE*SEARCHPROTOCOLHOST.EXE*SEARCHINDEXER.EXE*SPPSVC.EXE*VDS.EXE*VSSVC.EXE*PRINTISOLATIONHOST.EXE*WUAUCLT.EXE*MSCORSVW.EXE*OSPPSVC.EXE*CONHOST.EXE*DLLHOST.EXE*MSMPENG.EXE*MSSECES.EXE*SHELLEXPERIENCEHOST.EXE*SEARCHUI.EXE*SMSVCHOST.EXE*PRESENTATIONFONTCACHE.EXE*MYSQLD.EXE*OfficeClickToRun.exe*";
+const char ProcView::plist_kernel_w10[]			= "*[System Process]*System*SVCHOST.EXE*MEMORY COMPRESSION*Registry*";
+const char ProcView::plist_system_w10[]			= "*SMSS.EXE*CSRSS.EXE*WINLOGON.EXE*SERVICES.EXE*LSASS.EXE*EXPLORER.EXE*SPOOLSV.EXE*ALG.EXE*CTFMON.EXE*AUDIODG.EXE*DWM.EXE*TASKHOST.EXE*LSM.EXE*WININIT.EXE*SEARCHFILTERHOST.EXE*SEARCHPROTOCOLHOST.EXE*SEARCHINDEXER.EXE*SPPSVC.EXE*VDS.EXE*VSSVC.EXE*PRINTISOLATIONHOST.EXE*WUAUCLT.EXE*MSCORSVW.EXE*OSPPSVC.EXE*CONHOST.EXE*DLLHOST.EXE*MSMPENG.EXE*MSSECES.EXE*SHELLEXPERIENCEHOST.EXE*SEARCHUI.EXE*SMSVCHOST.EXE*PRESENTATIONFONTCACHE.EXE*MYSQLD.EXE*OfficeClickToRun.exe*WmiPrvSE.exe*NisSrv.exe*WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe*StartMenuExperienceHost.exe*";
 
 
 
@@ -143,46 +143,8 @@ ProcView::ProcView()
 	reg.Get (&REGV_DATEPRINT, REG_DATEPRINT);
 
 	// Get third-party installation paths.
-	// 1) Sophos AntiVirus
-	//		... SAVSERVICE Path
-	reg.Get (&REGV_SOPHOS_SAVSERVICE_PATH, REGN_SOPHOS_SAVSERVICE_PATH, HKLM, REG_SOPHOS_SAVSERVICE_APPLICATION);
-	Cutb (&REGV_SOPHOS_SAVSERVICE_PATH);
 
-	//		... Web Intelligence Path
-	reg.Get (&REGV_SOPHOS_WEBINTELLIGENCE_PATH, REGN_SOPHOS_WEBINTELLIGENCE_LOCATION, HKLM, REG_SOPHOS_WEBINTELLIGENCE_APPLICATION);
-	Cutb (&REGV_SOPHOS_WEBINTELLIGENCE_PATH);
-
-	//		... Web Control Path
-	if (REGV_SOPHOS_SAVSERVICE_PATH.length() > 0)
-	{
-		// Found Sophos SAVSERVICE installation.
-		REGV_SOPHOS_WEBCONTROL_PATH = CSR(REGV_SOPHOS_SAVSERVICE_PATH, "\\Web Control");
-	}
-
-	//		... MCS Path (Sophos Remote Management Console)
-	//		Note: This feature requires "SetACL" to be run on the specified reg subkey in order to
-	//				allow "USERS" group "READ ACCESS" to the key.
-	//		Source:	https://helgeklein.com/download -> SetACL
-	//
-	reg.Get (&REGV_SOPHOS_MCS_ADAPTER, REGN_SOPHOS_MCS_ADAPTER, HKLM, REG_SOPHOS_MCS);
-	Cutb (&REGV_SOPHOS_MCS_ADAPTER);
-	if (REGV_SOPHOS_MCS_ADAPTER.length() > 0)
-	{
-		// Found Sophos MCS installation.
-		SOPHOS_MCS_PATH = GetPathFromCall(CSR("\"", REGV_SOPHOS_MCS_ADAPTER, "\""));
-	}
-
-	//		... ALC Path (Sophos Auto Update)
-	reg.Get (&REGV_SOPHOS_ALC_ADAPTER, REGN_SOPHOS_ALC_ADAPTER, HKLM, REG_SOPHOS_ALC);
-	Cutb (&REGV_SOPHOS_ALC_ADAPTER);
-	if (REGV_SOPHOS_ALC_ADAPTER.length() > 0)
-	{
-		// Found Sophos ALC installation.
-		SOPHOS_ALC_PATH = GetPathFromCall(CSR("\"", REGV_SOPHOS_ALC_ADAPTER, "\""));
-	}
-
-
-	// 2) Realtek Audio Control Panel
+	// Realtek Audio Control Panel
 	if (is_64_bit_os)
 	{
 		regRead64 (&REGV_REALTEK_AUDIO_PATH, HKLM, REG_REALTEK_AUDIO_GUIINFO, REGN_REALTEK_AUDIO_PATH);
@@ -763,36 +725,6 @@ LRESULT CALLBACK ProcView::WndProc (HWND hwnd, UINT msg, WPARAM wparam, LPARAM l
 					// Fill in the Data.
 					for (i = 1; i <= u; i++)
 					{
-						// Variable default: "Icon load unsuccessful."
-						image_icon = 0;
-
-						// Load EXE Image Icon
-						ShellExResolve (CSR(Chr(34), ep.exepath(i), Chr(34)), &vpath, &vfile, &vparams);
-						if (UCase(vpath) == UCase(vfile))
-						{
-							// The EXE image path could not be retrieved.
-							// This causes "vpath == vfile".
-							// InfoBox (0, CSR(CSR("vpath = ", vpath, " / vfile = / ", vfile), "/ ep.exepath(i) = ", ep.exepath(i)), "Test - image_icon", MB_OK);
-						}
-						else
-						{
-							strIconSrcFullFN = CSR(vpath, "\\", vfile);
-							image_icon = GetFileIcon(strIconSrcFullFN, false);
-
-							// For testing purposes only.
-							// InfoBox (0, CSR("strIconSrcFullFN = ", strIconSrcFullFN, " / ep.exepath(i) = ", ep.exepath(i)), "Test - image_icon", MB_OK);
-						}
-						
-						// Did we retrieve a valid icon handle of the icon loaded above?
-						if (image_icon == 0)
-						{
-							// Icon could not be loaded from file.
-							image_icon = L_IDI_UNKNOWN;
-
-							// For testing purposes only.
-							// InfoBox (0, CSR("strIconSrcFullFN = ", strIconSrcFullFN, " / ep.exepath(i) = ", ep.exepath(i)), "Test - image_icon", MB_OK);
-						}
-						
 						// Hide modules from popup menu list.
 						if ((UCase(ep.exename(i)) == UCase(my_exefullfn)) && (ep.procid(i) == my_procid))
 						{
@@ -804,7 +736,7 @@ LRESULT CALLBACK ProcView::WndProc (HWND hwnd, UINT msg, WPARAM wparam, LPARAM l
 						{
 							// (!) Do not display components listed in windows system root.
 							// Continue with next FOR-Element.
-							// InfoBox (0, CSR(os_system_dir, "\\", ep.exename(i)), "Test", MB_OK);
+							// InfoBox (0, CSR(os_system_dir, "\\", ep.exename(i)), "Test - windows_root", MB_OK);
 							continue;
 						}
 						
@@ -819,58 +751,7 @@ LRESULT CALLBACK ProcView::WndProc (HWND hwnd, UINT msg, WPARAM wparam, LPARAM l
 							}
 						}
 						
-						// 1) Sophos AntiVirus
-						if (REGV_SOPHOS_SAVSERVICE_PATH.length() > 0)
-						{
-							// Sophos AntiVirus installed.
-							if (FileExists(CSR(REGV_SOPHOS_SAVSERVICE_PATH, "\\", ep.exename(i))) == true)
-							{
-								// Continue with next FOR-Element.
-								continue;
-							}
-						}
-
-						if (REGV_SOPHOS_WEBINTELLIGENCE_PATH.length() > 0)
-						{
-							// Sophos Web Intelligence installed.
-							if (FileExists(CSR(REGV_SOPHOS_WEBINTELLIGENCE_PATH, "\\", ep.exename(i))) == true)
-							{
-								// Continue with next FOR-Element.
-								continue;
-							}
-						}
-
-						if (REGV_SOPHOS_WEBCONTROL_PATH.length() > 0)
-						{
-							// Sophos Web Control installed.
-							if (FileExists(CSR(REGV_SOPHOS_WEBCONTROL_PATH, "\\", ep.exename(i))) == true)
-							{
-								// Continue with next FOR-Element.
-								continue;
-							}
-						}
-
-						if (SOPHOS_MCS_PATH.length() > 0)
-						{
-							// Sophos Remote Management Console installed.
-							if (FileExists(CSR(SOPHOS_MCS_PATH, "\\", ep.exename(i))) == true)
-							{
-								// Continue with next FOR-Element.
-								continue;
-							}
-						}
-
-						if (SOPHOS_ALC_PATH.length() > 0)
-						{
-							// Sophos Auto Update installed.
-							if (FileExists(CSR(SOPHOS_ALC_PATH, "\\", ep.exename(i))) == true)
-							{
-								// Continue with next FOR-Element.
-								continue;
-							}
-						}
-						
-						// 2) Realtek Audio Control Panel
+						// Realtek Audio Control Panel
 						if (REGV_REALTEK_AUDIO_PATH.length() > 0)
 						{
 							// Realtek Audio Control Panel installed.
@@ -879,6 +760,36 @@ LRESULT CALLBACK ProcView::WndProc (HWND hwnd, UINT msg, WPARAM wparam, LPARAM l
 								// Continue with next FOR-Element.
 								continue;
 							}
+						}
+
+						// Variable default: "Icon load unsuccessful."
+						image_icon = 0;
+
+						// Load EXE Image Icon
+						ShellExResolve(CSR(Chr(34), ep.exepath(i), Chr(34)), &vpath, &vfile, &vparams);
+						if (UCase(vpath) == UCase(vfile))
+						{
+							// The EXE image path could not be retrieved.
+							// This causes "vpath == vfile".
+							// InfoBox (0, CSR(CSR("vpath = ", vpath, " / vfile = / ", vfile), "/ ep.exepath(i) = ", ep.exepath(i)), "Test - image_icon", MB_OK);
+						}
+						else
+						{
+							strIconSrcFullFN = CSR(vpath, "\\", vfile);
+							image_icon = GetFileIcon(strIconSrcFullFN, false);		// Do NOT use continue after this line because DestroyIcon would be missing causing memory leak.
+
+							// For testing purposes only.
+							// InfoBox (0, CSR("strIconSrcFullFN = ", strIconSrcFullFN, " / ep.exepath(i) = ", ep.exepath(i)), "Test - image_icon", MB_OK);
+						}
+
+						// Did we retrieve a valid icon handle of the icon loaded above?
+						if (image_icon == 0)
+						{
+							// Icon could not be loaded from file.
+							image_icon = L_IDI_UNKNOWN;
+
+							// For testing purposes only.
+							// InfoBox (0, CSR("strIconSrcFullFN = ", strIconSrcFullFN, " / ep.exepath(i) = ", ep.exepath(i)), "Test - image_icon", MB_OK);
 						}
 
 						// Select appropriate List from "Kernel", "System" or "Other" for the enumed process

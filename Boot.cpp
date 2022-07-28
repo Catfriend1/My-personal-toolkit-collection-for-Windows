@@ -633,7 +633,7 @@ LRESULT CALLBACK VK2_WndProc (HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 			// Check if dateprint component is enabled via procview.
 			if (mod_procview != 0)
 			{
-				if (mod_procview->IsDatePrintEnabled() && !bReentrantLock)
+				if (mod_procview->IsDatePrintEnabled() && !bReentrantLock && !IsRemoteDesktopSession())
 				{
 					// Loopback Protection.
 					bReentrantLock = true;

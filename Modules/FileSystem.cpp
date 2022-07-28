@@ -898,7 +898,7 @@ HICON GetFileIcon (string file, bool sizebig)
 	// Get File Icon from Windows Shell
 	SHGetFileInfo (&file[0], 0, &si, sizeof(si), size);
 
-	// Return Icon Handle if successfull
+	// Return Icon Handle if successful
 	return (si.hIcon == (HICON) 0xcccccccccccccccc) ? 0 : si.hIcon;
 }
 

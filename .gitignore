@@ -1,4 +1,6 @@
 /.vs
+Winsuite.aps
+Winsuite.vcxproj.filters
 
 /Debug
 !/Debug/.gitkeep
