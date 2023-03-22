@@ -23,6 +23,7 @@
 
 		static const long SYSLOG_TCP_PORT;
 		static const char SYSLOG_CAPTION[], CLS_HOSTWINDOW[];
+		static const char LOCK_KEY;
 
 		static const long TIMER_DELAY;
 		static const long MSG_DISPTIME;
