@@ -31,7 +31,7 @@ const bool Syslog_Client::DEBUG_MODE						= false;
 const long Syslog_Client::SYSLOG_TCP_PORT					= 17888;
 const char Syslog_Client::SYSLOG_CAPTION[]					= "Syslog";
 const char Syslog_Client::CLS_HOSTWINDOW[]					= "Syslog_HostWndClass";
-const char Syslog_Client::LOCK_KEY							= 'F';
+const char Syslog_Client::LOCK_KEY							= 'N';
 
 const long Syslog_Client::TIMER_DELAY						= 1000;
 const long Syslog_Client::MSG_DISPTIME						= 12;
