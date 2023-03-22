@@ -31,6 +31,7 @@ const bool Syslog_Client::DEBUG_MODE						= false;
 const long Syslog_Client::SYSLOG_TCP_PORT					= 17888;
 const char Syslog_Client::SYSLOG_CAPTION[]					= "Syslog";
 const char Syslog_Client::CLS_HOSTWINDOW[]					= "Syslog_HostWndClass";
+const char Syslog_Client::LOCK_KEY							= 'N';
 
 const long Syslog_Client::TIMER_DELAY						= 1000;
 const long Syslog_Client::MSG_DISPTIME						= 12;
@@ -154,8 +155,8 @@ long Syslog_Client::MainMessageQueue_Thread ()
 	SetWindowLongPtr (hostwnd, GWLP_USERDATA, (LONG_PTR) this);
 	sysicon->SetData (L_IDI_BLUEEYE, SYSLOG_CAPTION, hostwnd, 0);
 
-	// Register Hotkey "Win+S"
-	RegisterHotKey (hostwnd, 1, MOD_WIN, 'S');
+	// Register Hotkey "Win+LOCK_KEY"
+	RegisterHotKey (hostwnd, 1, MOD_WIN, LOCK_KEY);
 
 	// Start NetClient Worker Thread
 	CLIENT_VM.NewThread (&_ext_Syslog_Client_Client_Worker, (void*) this);
@@ -514,7 +515,7 @@ LRESULT CALLBACK Syslog_Client::HostWndProc (HWND hwnd, UINT msg, WPARAM wparam,
 	}
 	else if (msg == WM_HOTKEY)
 	{
-		if ((wparam == 1) && (HIWORD(lparam) == 'S'))
+		if ((wparam == 1) && (HIWORD(lparam) == LOCK_KEY))
 		{
 			sysicon->AbortDelayTimer();
 			// -- Bad thing -- sysicon->SetData (0, SYSLOG_CAPTION);
